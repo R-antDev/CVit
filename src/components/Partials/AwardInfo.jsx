@@ -1,41 +1,36 @@
-import { MdWorkHistory } from "react-icons/md";
 import Input from "../Utils/Input.jsx";
-import TextArea from "../Utils/TextArea.jsx";
 import Button from "../Utils/Button.jsx";
 import { TbNewSection } from "react-icons/tb";
+import { GiTrophyCup } from "react-icons/gi";
 
-export function WorkInfo() {
+export function AwardInfo() {
   return (
     <>
       <section className="space-y-4">
         <div className="flex items-center space-x-2 border-b py-2">
           <span className="text-3xl">
-            <MdWorkHistory />
+            <GiTrophyCup />
           </span>
-          <h1 className="font-bold text-lg">Work Experience</h1>
+          <h1 className="font-bold text-lg">Awards</h1>
         </div>
         <section className="flex flex-col space-y-4">
           <div>
-            <Input type="text" placeholder="ABC crop." label="Company" />
+            <Input type="text" placeholder="ABC Contest" label="Institution" />
           </div>
           <div>
             <Input
               type="text"
-              placeholder="Backend Engineer"
-              label="Job Title"
+              placeholder="Best Backend Engineer Award"
+              label="Award"
             />
           </div>
-          <div className="grid grid-cols-2 gap-4">
-            <Input type="date" label="Start Date" value="2020-01-01" />
-            <Input type="date" label="End Date" value="2022-01-01" />
-          </div>
           <div>
-            <TextArea label="Location"></TextArea>
+            <Input type="date" label="Year" value="2023-02-12" />
           </div>
         </section>
         <Button
           icon={<TbNewSection />}
-          label="Add more experience"
+          label="Add more award"
           className="bg-gray-700 text-white"
         />
       </section>
