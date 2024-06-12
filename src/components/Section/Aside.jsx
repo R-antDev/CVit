@@ -11,7 +11,7 @@ import { PlatformInfo } from "../Partials/PlatformInfo.jsx";
 function Aside() {
   return (
     <>
-      <aside className="space-y-10">
+      <aside className="space-y-10 col-span-2">
         <PersonInfo />
         <EducationInfo />
         <WorkInfo />
