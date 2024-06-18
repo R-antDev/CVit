@@ -4,7 +4,7 @@ import { TbNewSection } from "react-icons/tb";
 import { FaLanguage } from "react-icons/fa";
 import Select from "../Utils/Select.jsx";
 
-export function LangInfo() {
+export function LanguageForm() {
   return (
     <>
       <section className="space-y-4">

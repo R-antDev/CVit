@@ -3,7 +3,7 @@ import Button from "../Utils/Button.jsx";
 import { TbNewSection } from "react-icons/tb";
 import { MdInterests } from "react-icons/md";
 
-export function InterestInfo() {
+export function InterestForm() {
   return (
     <>
       <section className="space-y-4">

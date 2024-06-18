@@ -1,0 +1,33 @@
+import { PersonInfo } from "../Info/PersonInfo.jsx";
+import { ProfileInfo } from "../Info/ProfileInfo.jsx";
+import { AwardInfo } from "../Info/AwardInfo.jsx";
+import { ReferenceInfo } from "../Info/ReferenceInfo.jsx";
+import { PlatformInfo } from "../Info/PlatformInfo.jsx";
+import { AboutInfo } from "../Info/AboutInfo.jsx";
+import { EduInfo } from "../Info/EduInfo.jsx";
+import { ExperienceInfo } from "../Info/ExperienceInfo.jsx";
+
+function CvBody() {
+  return (
+    <>
+      <section className={"p-8 border-2 rounded-xl col-span-3 space-y-6"}>
+        <PersonInfo />
+        <div className={"grid grid-cols-3 gap-10"}>
+          <div className={"col-span-1 space-y-4"}>
+            <ProfileInfo />
+            <AwardInfo />
+            <ReferenceInfo />
+            <PlatformInfo />
+          </div>
+          <div className={"col-span-2 space-y-4"}>
+            <AboutInfo />
+            <EduInfo />
+            <ExperienceInfo />
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
+
+export default CvBody;

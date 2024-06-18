@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-function Input({ type, placeholder, className, label, value }) {
+function Input({ type, placeholder, className, label, value, onChange, name }) {
   return (
     <>
       <label>
@@ -10,6 +10,8 @@ function Input({ type, placeholder, className, label, value }) {
           className={`w-full p-2 border border-gray-300 rounded-lg focus:border-blue-300 focus:outline-none focus:ring ${className}`}
           placeholder={placeholder}
           value={value}
+          onChange={onChange}
+          name={name}
         />
       </label>
     </>
@@ -22,6 +24,8 @@ Input.propTypes = {
   className: PropTypes.string,
   label: PropTypes.string,
   value: PropTypes.string,
+  onChange: PropTypes.func,
+  name: PropTypes.string,
 };
 
 export default Input;

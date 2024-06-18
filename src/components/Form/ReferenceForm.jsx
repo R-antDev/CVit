@@ -3,7 +3,7 @@ import Button from "../Utils/Button.jsx";
 import { TbNewSection } from "react-icons/tb";
 import { GoCrossReference } from "react-icons/go";
 
-export function RefInfo() {
+export function ReferenceForm() {
   return (
     <>
       <section className="space-y-4">

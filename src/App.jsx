@@ -1,12 +1,12 @@
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar.jsx";
-import Body from "./components/Section/Body.jsx";
+import MainBody from "./components/Section/MainBody.jsx";
 
 function App() {
   return (
     <>
       <Navbar />
-      <Body />
+      <MainBody />
     </>
   );
 }

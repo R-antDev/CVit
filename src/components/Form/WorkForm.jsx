@@ -4,7 +4,7 @@ import TextArea from "../Utils/TextArea.jsx";
 import Button from "../Utils/Button.jsx";
 import { TbNewSection } from "react-icons/tb";
 
-export function WorkInfo() {
+export function WorkForm() {
   return (
     <>
       <section className="space-y-4">
