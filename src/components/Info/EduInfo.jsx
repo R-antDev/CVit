@@ -1,6 +1,11 @@
 import { FaUserGraduate } from "react-icons/fa";
+import {useContext} from "react";
+import {PersonContext} from "../../Context/PersonContext.jsx";
 
 export function EduInfo() {
+
+  const { personInfo } = useContext(PersonContext);
+
   return (
     <>
       <section className={"space-y-4"}>
@@ -9,38 +14,21 @@ export function EduInfo() {
           <h1 className={"text-xl font-bold uppercase"}>Education</h1>
         </div>
         <div className={"grid grid-cols-2 gap-4"}>
-          <div className={"space-y-1"}>
-            <h1 className={"font-bold text-md"}>Masters in Computer Science</h1>
-            <p className={"capitalize text-gray-700 text-sm"}>
-              Oxford University
-            </p>
-            <p className={"capitalize text-gray-700 text-sm"}>2015 - 2016</p>
-          </div>
-          <div className={"space-y-1"}>
-            <h1 className={"font-bold text-md"}>
-              Bachelor in Computer Science
-            </h1>
-            <p className={"capitalize text-gray-700 text-sm"}>
-              Oxford University
-            </p>
-            <p className={"capitalize text-gray-700 text-sm"}>2012 - 2015</p>
-          </div>
-          <div className={"space-y-1"}>
-            <h1 className={"font-bold text-md"}>Masters in Computer Science</h1>
-            <p className={"capitalize text-gray-700 text-sm"}>
-              Oxford University
-            </p>
-            <p className={"capitalize text-gray-700 text-sm"}>2015 - 2016</p>
-          </div>
-          <div className={"space-y-1"}>
-            <h1 className={"font-bold text-md"}>
-              Bachelor in Computer Science
-            </h1>
-            <p className={"capitalize text-gray-700 text-sm"}>
-              Oxford University
-            </p>
-            <p className={"capitalize text-gray-700 text-sm"}>2012 - 2015</p>
-          </div>
+          {
+            personInfo.education.map((edu, index) => (
+                <div key={index} className={"space-y-1"}>
+                  <h1 className={"font-bold text-md"}>{edu.degree || "Your Degree Name"}</h1>
+                  <p className={"capitalize text-gray-700 text-sm"}>
+                    {edu.institute || "Your Institute Name"}
+                  </p>
+                  <p className={"capitalize text-gray-700 text-sm"}>
+                    {edu.start_date || "Start Date"} - {edu.end_date || "End Date"}
+                  </p>
+                </div>
+            ))
+
+          }
+
         </div>
       </section>
     </>

@@ -4,20 +4,10 @@ import TextArea from "../Utils/TextArea.jsx";
 import Button from "../Utils/Button.jsx";
 import { TbNewSection } from "react-icons/tb";
 import PropTypes from "prop-types";
-import { useContext } from "react";
-import { PersonContext } from "../../Context/PersonContext.jsx";
+
 import { DateToday } from "../Utils/DateToday.jsx";
 
-export function PersonForm() {
-  const { personInfo, setPersonInfo } = useContext(PersonContext);
-
-  const handleOnChange = (e) => {
-    const { name, value } = e.target;
-    setPersonInfo((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
+export function PersonForm({ personInfo , handleOnChange}) {
 
   return (
     <>
@@ -148,6 +138,6 @@ export function PersonForm() {
 }
 
 PersonForm.propTypes = {
-  profession: PropTypes.string,
-  setProfession: PropTypes.func,
+  personInfo:PropTypes.object,
+  handleOnChange:PropTypes.func
 };

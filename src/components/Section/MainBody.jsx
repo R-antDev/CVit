@@ -14,7 +14,11 @@ function MainBody() {
     nationality: "",
     address: "",
     about: "",
-    education: "",
+    education: [
+      {
+        degree: '', institute: '' , start_date: '', end_date: ''
+      }
+    ],
     experience: "",
     skills: "",
     languages: "",

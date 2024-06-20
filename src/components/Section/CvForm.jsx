@@ -7,14 +7,31 @@ import { InterestForm } from "../Form/InterestForm.jsx";
 import { ReferenceForm } from "../Form/ReferenceForm.jsx";
 import { AwardForm } from "../Form/AwardForm.jsx";
 import { PlatformForm } from "../Form/PlatformForm.jsx";
-import PropTypes from "prop-types";
+import {useContext} from "react";
+import {PersonContext} from "../../Context/PersonContext.jsx";
 
 function CvForm() {
+
+  const { personInfo, setPersonInfo } = useContext(PersonContext);
+
+  const handleOnChange = (e) => {
+    const { name, value } = e.target;
+    setPersonInfo((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
   return (
     <>
       <aside className="space-y-10 col-span-2">
-        <PersonForm />
-        <EducationForm />
+        <PersonForm
+            personInfo={personInfo}
+            handleOnChange={handleOnChange}
+        />
+        <EducationForm
+            personInfo={personInfo} setPersonInfo={setPersonInfo}
+        />
         <WorkForm />
         <SkillForm />
         <LanguageForm />
@@ -26,10 +43,5 @@ function CvForm() {
     </>
   );
 }
-
-CvForm.propTypes = {
-  profession: PropTypes.string,
-  setProfession: PropTypes.func,
-};
 
 export default CvForm;

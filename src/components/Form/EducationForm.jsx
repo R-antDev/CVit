@@ -2,43 +2,97 @@ import { PiStudentFill } from "react-icons/pi";
 import Input from "../Utils/Input.jsx";
 import Button from "../Utils/Button.jsx";
 import { TbNewSection } from "react-icons/tb";
+import PropTypes from "prop-types";
 
-export function EducationForm() {
+export function EducationForm({ personInfo, setPersonInfo }) {
+
+  const handleEducationChange = (index, e) => {
+    const { name, value } = e.target;
+
+    setPersonInfo(prevState => {
+      const updatedEducation = [...prevState.education];
+      updatedEducation[index] = {
+        ...updatedEducation[index],
+        [name]: value
+      };
+
+      return { ...prevState, education: updatedEducation };
+    });
+  };
+
+  const addEducationEntry = () => {
+    setPersonInfo(prevState => ({
+      ...prevState,
+      education: [
+        ...prevState.education,
+        { degree: "", institute: "", start_date: "", end_date: "" }
+      ]
+    }));
+  };
+
   return (
-    <>
-      <section className="space-y-4">
-        <div className="flex items-center space-x-2 border-b py-2">
+      <>
+        <section className="space-y-4">
+          <div className="flex items-center space-x-2 border-b py-2">
           <span className="text-3xl">
             <PiStudentFill />
           </span>
-          <h1 className="font-bold text-lg">Education Information</h1>
-        </div>
-        <section className="flex flex-col space-y-4">
-          <div>
-            <Input
-              type="text"
-              placeholder="Bachelor of Science"
-              label="Degree"
-            />
+            <h1 className="font-bold text-lg">Education Information</h1>
           </div>
-          <div>
-            <Input
-              type="text"
-              placeholder="Oxford University"
-              label="Institution"
-            />
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            <Input type="date" label="Start Date" value="2020-01-01" />
-            <Input type="date" label="End Date" value="2022-01-01" />
-          </div>
+          <section className={'divide-y-2 divide-blue-400 divide-dashed space-y-4'}>
+          {personInfo.education.map((edu, index) => (
+              <div key={index} className="flex flex-col py-2 space-y-4">
+                <div>
+                  <Input
+                      type="text"
+                      placeholder="Bachelor of Science"
+                      label={`Degree - ${index + 1}`}
+                      name="degree"
+                      value={edu.degree}
+                      onChange={(e) => handleEducationChange(index, e)}
+                  />
+                </div>
+                <div>
+                  <Input
+                      type="text"
+                      placeholder="Oxford University"
+                      label="Institution"
+                      name="institute"
+                      value={edu.institute}
+                      onChange={(e) => handleEducationChange(index, e)}
+                  />
+                </div>
+                <div className="grid grid-cols-2 gap-4">
+                  <Input
+                      type="number"
+                      label="Start Date"
+                      name="start_date"
+                      value={edu.start_date}
+                      onChange={(e) => handleEducationChange(index, e)}
+                  />
+                  <Input
+                      type="number"
+                      label="End Date"
+                      name="end_date"
+                      value={edu.end_date}
+                      onChange={(e) => handleEducationChange(index, e)}
+                  />
+                </div>
+              </div>
+          ))}
+          </section>
+          <Button
+              icon={<TbNewSection />}
+              label="Add more education"
+              className="bg-gray-700 text-white"
+              onClick={addEducationEntry}
+          />
         </section>
-        <Button
-          icon={<TbNewSection />}
-          label="Add more education"
-          className="bg-gray-700 text-white"
-        />
-      </section>
-    </>
+      </>
   );
 }
+
+EducationForm.propTypes = {
+  personInfo: PropTypes.object.isRequired,
+  setPersonInfo: PropTypes.func.isRequired
+};
