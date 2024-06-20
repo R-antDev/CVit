@@ -32,7 +32,9 @@ function CvForm() {
         <EducationForm
             personInfo={personInfo} setPersonInfo={setPersonInfo}
         />
-        <WorkForm />
+        <WorkForm
+            personInfo={personInfo} setPersonInfo={setPersonInfo}
+        />
         <SkillForm />
         <LanguageForm />
         <InterestForm />

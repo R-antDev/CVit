@@ -19,7 +19,11 @@ function MainBody() {
         degree: '', institute: '' , start_date: '', end_date: ''
       }
     ],
-    experience: "",
+    work: [
+      {
+        company: '', job_title: '', start_date: '', end_date: '', location: ''
+      }
+    ],
     skills: "",
     languages: "",
     interests: "",

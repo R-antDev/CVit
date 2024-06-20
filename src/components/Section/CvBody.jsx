@@ -5,7 +5,7 @@ import { ReferenceInfo } from "../Info/ReferenceInfo.jsx";
 import { PlatformInfo } from "../Info/PlatformInfo.jsx";
 import { AboutInfo } from "../Info/AboutInfo.jsx";
 import { EduInfo } from "../Info/EduInfo.jsx";
-import { ExperienceInfo } from "../Info/ExperienceInfo.jsx";
+import { WorkInfo } from "../Info/WorkInfo.jsx";
 
 function CvBody() {
   return (
@@ -22,7 +22,7 @@ function CvBody() {
           <div className={"col-span-2 space-y-4"}>
             <AboutInfo />
             <EduInfo />
-            <ExperienceInfo />
+            <WorkInfo />
           </div>
         </div>
       </section>
