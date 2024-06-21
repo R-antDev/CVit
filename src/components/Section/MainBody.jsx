@@ -33,7 +33,7 @@ function MainBody() {
   });
   return (
     <>
-      <section className="container py-6 grid grid-cols-5 gap-10">
+      <section className="container py-6 md:grid grid-cols-5 gap-10">
         <PersonContext.Provider value={{ personInfo, setPersonInfo }}>
           <CvForm />
           <CvBody />

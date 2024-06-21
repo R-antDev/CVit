@@ -10,7 +10,7 @@ import { WorkInfo } from "../Info/WorkInfo.jsx";
 function CvBody() {
   return (
     <>
-      <section className={"p-8 border-2 rounded-xl col-span-3 space-y-6"}>
+      <section className={"p-8 hidden md:block border-2 rounded-xl col-span-3 space-y-6"}>
         <PersonInfo />
         <div className={"grid grid-cols-3 gap-10"}>
           <div className={"col-span-1 space-y-4"}>
