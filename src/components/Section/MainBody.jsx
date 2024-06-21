@@ -27,7 +27,14 @@ function MainBody() {
     skills: "",
     languages: "",
     interests: "",
-    references: "",
+    references: [
+      {
+        name: '',
+        title: '',
+        email: '',
+        phone: ''
+      }
+    ],
     awards: [
         {
       institution: '',

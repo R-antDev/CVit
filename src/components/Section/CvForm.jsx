@@ -38,7 +38,7 @@ function CvForm() {
         <SkillForm />
         <LanguageForm />
         <InterestForm />
-        <ReferenceForm />
+        <ReferenceForm personInfo={personInfo} setPersonInfo={setPersonInfo} />
         <AwardForm personInfo={personInfo} setPersonInfo={setPersonInfo} />
         <PlatformForm />
       </aside>

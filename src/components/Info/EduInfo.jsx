@@ -22,13 +22,11 @@ export function EduInfo() {
                     {edu.institute || "Your Institute Name"}
                   </p>
                   <p className={"capitalize text-gray-700 text-sm"}>
-                    {edu.start_date || "Start Date"} - {edu.end_date || "End Date"}
+                    {edu.start_year || "Start Year"} - {edu.end_year || "End Year"}
                   </p>
                 </div>
             ))
-
           }
-
         </div>
       </section>
     </>

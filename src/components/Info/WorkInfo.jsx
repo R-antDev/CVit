@@ -19,7 +19,7 @@ export function WorkInfo() {
                 <div key={index} className={"space-y-1"}>
                   <h1 className={"font-bold text-md capitalize"}>{work.job_title || "Your Job Title"}</h1>
                   <p className={"capitalize text-gray-700 text-sm"}>{work.company || "Your Company Name"}</p>
-                  <p className={"capitalize text-gray-700 text-sm"}>{work.start_date || "Start Date"} - {work.end_date || "End Date"}</p>
+                  <p className={"capitalize text-gray-700 text-sm"}>{work.start_year || "Start Year"} - {work.end_year || "End Year"}</p>
                   <p className={"capitalize text-gray-700 text-sm"}>{work.location || "Your Location"}</p>
                 </div>
             ))

@@ -65,16 +65,16 @@ export function WorkForm({ personInfo, setPersonInfo }) {
               <div className="grid grid-cols-2 gap-4">
                 <Input
                   type="number"
-                  label="Start Date"
-                  name="start_date"
-                  value={work.start_date}
+                  label="Start Year"
+                  name="start_year"
+                  value={work.start_year}
                   onChange={(e) => handleWorkChange(index, e)}
                 />
                 <Input
                   type="number"
-                  label="End Date"
-                  name="end_date"
-                  value={work.end_date}
+                  label="End Year"
+                  name="end_year"
+                  value={work.end_year}
                   onChange={(e) => handleWorkChange(index, e)}
                 />
               </div>
