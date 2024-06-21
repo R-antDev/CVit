@@ -7,11 +7,10 @@ import { InterestForm } from "../Form/InterestForm.jsx";
 import { ReferenceForm } from "../Form/ReferenceForm.jsx";
 import { AwardForm } from "../Form/AwardForm.jsx";
 import { PlatformForm } from "../Form/PlatformForm.jsx";
-import {useContext} from "react";
-import {PersonContext} from "../../Context/PersonContext.jsx";
+import { useContext } from "react";
+import { PersonContext } from "../../Context/PersonContext.jsx";
 
 function CvForm() {
-
   const { personInfo, setPersonInfo } = useContext(PersonContext);
 
   const handleOnChange = (e) => {
@@ -25,22 +24,15 @@ function CvForm() {
   return (
     <>
       <aside className="space-y-10 col-span-2">
-        <PersonForm
-            personInfo={personInfo}
-            handleOnChange={handleOnChange}
-        />
-        <EducationForm
-            personInfo={personInfo} setPersonInfo={setPersonInfo}
-        />
-        <WorkForm
-            personInfo={personInfo} setPersonInfo={setPersonInfo}
-        />
+        <PersonForm personInfo={personInfo} handleOnChange={handleOnChange} />
+        <EducationForm personInfo={personInfo} setPersonInfo={setPersonInfo} />
+        <WorkForm personInfo={personInfo} setPersonInfo={setPersonInfo} />
         <SkillForm />
         <LanguageForm />
         <InterestForm />
         <ReferenceForm personInfo={personInfo} setPersonInfo={setPersonInfo} />
         <AwardForm personInfo={personInfo} setPersonInfo={setPersonInfo} />
-        <PlatformForm />
+        <PlatformForm personInfo={personInfo} setPersonInfo={setPersonInfo} />
       </aside>
     </>
   );

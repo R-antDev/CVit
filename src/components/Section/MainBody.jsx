@@ -16,33 +16,48 @@ function MainBody() {
     about: "",
     education: [
       {
-        degree: '', institute: '' , start_year: '', end_year: ''
-      }
+        degree: "",
+        institute: "",
+        start_year: "",
+        end_year: "",
+      },
     ],
     work: [
       {
-        company: '', job_title: '', start_year: '', end_year: '', location: ''
-      }
+        company: "",
+        job_title: "",
+        start_year: "",
+        end_year: "",
+        location: "",
+      },
     ],
     skills: "",
     languages: "",
     interests: "",
     references: [
       {
-        name: '',
-        title: '',
-        email: '',
-        phone: ''
-      }
+        name: "",
+        title: "",
+        email: "",
+        phone: "",
+      },
     ],
     awards: [
-        {
-      institution: '',
-      award: '',
-      year: ''
-    }
+      {
+        institution: "",
+        award: "",
+        year: "",
+      },
     ],
-    platforms: "",
+    platforms: [
+      {
+        username: "",
+        platform: "",
+        profile_link: function ()  {
+          return `https://${this.platform}.com/${this.username}`;
+        },
+      }
+    ],
   });
   return (
     <>

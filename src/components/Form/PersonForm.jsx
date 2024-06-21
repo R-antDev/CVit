@@ -7,8 +7,7 @@ import PropTypes from "prop-types";
 
 import { DateToday } from "../Utils/DateToday.jsx";
 
-export function PersonForm({ personInfo , handleOnChange}) {
-
+export function PersonForm({ personInfo, handleOnChange }) {
   return (
     <>
       <section className="space-y-4">
@@ -138,6 +137,6 @@ export function PersonForm({ personInfo , handleOnChange}) {
 }
 
 PersonForm.propTypes = {
-  personInfo:PropTypes.object,
-  handleOnChange:PropTypes.func
+  personInfo: PropTypes.object,
+  handleOnChange: PropTypes.func,
 };

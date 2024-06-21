@@ -6,26 +6,31 @@ import { TbNewSection } from "react-icons/tb";
 import PropTypes from "prop-types";
 
 export function WorkForm({ personInfo, setPersonInfo }) {
-
   const handleWorkChange = (index, e) => {
     const { name, value } = e.target;
-    setPersonInfo(prevState => {
+    setPersonInfo((prevState) => {
       const updatedWork = [...prevState.work];
       updatedWork[index] = {
         ...updatedWork[index],
-        [name]: value
+        [name]: value,
       };
       return { ...prevState, work: updatedWork };
     });
   };
 
   const addWorkEntry = () => {
-    setPersonInfo(prevState => ({
+    setPersonInfo((prevState) => ({
       ...prevState,
       work: [
         ...prevState.work,
-        { company: "", job_title: "", start_date: "", end_date: "", location: "" }
-      ]
+        {
+          company: "",
+          job_title: "",
+          start_date: "",
+          end_date: "",
+          location: "",
+        },
+      ],
     }));
   };
 
@@ -38,9 +43,8 @@ export function WorkForm({ personInfo, setPersonInfo }) {
           </span>
           <h1 className="font-bold text-lg">Work Experience</h1>
         </div>
-        <section className={'divide-y divide-blue-400 divide-dashed'}>
-        {
-          personInfo.work.map((work, index) => (
+        <section className={"divide-y divide-blue-400 divide-dashed"}>
+          {personInfo.work.map((work, index) => (
             <div key={index} className="flex flex-col py-4 space-y-4">
               <div>
                 <Input
@@ -87,8 +91,7 @@ export function WorkForm({ personInfo, setPersonInfo }) {
                 />
               </div>
             </div>
-          ))
-        }
+          ))}
         </section>
         <Button
           icon={<TbNewSection />}
@@ -103,5 +106,5 @@ export function WorkForm({ personInfo, setPersonInfo }) {
 
 WorkForm.propTypes = {
   personInfo: PropTypes.object,
-  setPersonInfo: PropTypes.func
-}
+  setPersonInfo: PropTypes.func,
+};

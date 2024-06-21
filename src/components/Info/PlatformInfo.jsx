@@ -1,23 +1,25 @@
-import {FaGithub, FaHackerrank, FaLinkedin} from "react-icons/fa";
+import {useContext} from "react";
+import {PersonContext} from "../../Context/PersonContext.jsx";
+import {Icon} from "../Utils/TheIcon.jsx";
+
 
 export function PlatformInfo() {
+
+  const { personInfo } = useContext(PersonContext);
+
   return (
     <>
       <aside>
         <h1 className={"text-xl font-bold uppercase"}>platform</h1>
         <div className={"py-4 space-y-1 text-sm"}>
-          <div className={"flex items-center space-x-2"}>
-            <FaGithub />
-            <p className={"lowercase text-gray-700"}>github.com/someone</p>
-          </div>
-          <div className={"flex items-center space-x-2"}>
-            <FaLinkedin />
-            <p className={"lowercase text-gray-700"}>linkdin.com/someone</p>
-          </div>
-          <div className={"flex items-center space-x-2"}>
-            <FaHackerrank />
-            <p className={"lowercase text-gray-700"}>hackerank.com/someone</p>
-          </div>
+          {
+            personInfo.platforms.map((platform, index) => (
+              <div key={index} className={"flex items-center space-x-2"}>
+                <Icon platform={platform.platform} />
+                <a href={platform.profile_link()} className={"lowercase text-blue-600"}>{platform.profile_link()}</a>
+              </div>
+            ))
+          }
         </div>
       </aside>
     </>
