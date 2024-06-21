@@ -65,16 +65,16 @@ export function EducationForm({ personInfo, setPersonInfo }) {
                 <div className="grid grid-cols-2 gap-4">
                   <Input
                       type="number"
-                      label="Start Date"
-                      name="start_date"
-                      value={edu.start_date}
+                      label="Start year"
+                      name="start_year"
+                      value={edu.start_year}
                       onChange={(e) => handleEducationChange(index, e)}
                   />
                   <Input
                       type="number"
-                      label="End Date"
-                      name="end_date"
-                      value={edu.end_date}
+                      label="End Year"
+                      name="end_year"
+                      value={edu.end_year}
                       onChange={(e) => handleEducationChange(index, e)}
                   />
                 </div>

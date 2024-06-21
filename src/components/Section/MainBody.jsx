@@ -16,19 +16,25 @@ function MainBody() {
     about: "",
     education: [
       {
-        degree: '', institute: '' , start_date: '', end_date: ''
+        degree: '', institute: '' , start_year: '', end_year: ''
       }
     ],
     work: [
       {
-        company: '', job_title: '', start_date: '', end_date: '', location: ''
+        company: '', job_title: '', start_year: '', end_year: '', location: ''
       }
     ],
     skills: "",
     languages: "",
     interests: "",
     references: "",
-    awards: "",
+    awards: [
+        {
+      institution: '',
+      award: '',
+      year: ''
+    }
+    ],
     platforms: "",
   });
   return (
