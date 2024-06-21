@@ -1,5 +1,4 @@
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { SiHackerrank } from "react-icons/si";
+import {FaGithub, FaHackerrank, FaLinkedin} from "react-icons/fa";
 
 export function PlatformInfo() {
   return (
@@ -16,7 +15,7 @@ export function PlatformInfo() {
             <p className={"lowercase text-gray-700"}>linkdin.com/someone</p>
           </div>
           <div className={"flex items-center space-x-2"}>
-            <SiHackerrank />
+            <FaHackerrank />
             <p className={"lowercase text-gray-700"}>hackerank.com/someone</p>
           </div>
         </div>

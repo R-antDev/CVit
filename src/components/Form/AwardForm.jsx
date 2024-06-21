@@ -39,7 +39,7 @@ export function AwardForm({personInfo, setPersonInfo}) {
           </span>
                     <h1 className="font-bold text-lg">Awards</h1>
                 </div>
-                <section className={'divide-y-2 divide-blue-400 divide-dashed'}>
+                <section className={'divide-y divide-blue-400 divide-dashed'}>
                     {personInfo.awards.map((award, index) => (
                         <div key={index} className="flex flex-col py-4 space-y-4">
                             <div>

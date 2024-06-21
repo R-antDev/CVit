@@ -38,7 +38,7 @@ export function WorkForm({ personInfo, setPersonInfo }) {
           </span>
           <h1 className="font-bold text-lg">Work Experience</h1>
         </div>
-        <section className={'divide-y-2 divide-blue-400 divide-dashed'}>
+        <section className={'divide-y divide-blue-400 divide-dashed'}>
         {
           personInfo.work.map((work, index) => (
             <div key={index} className="flex flex-col py-4 space-y-4">
